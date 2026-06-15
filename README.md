@@ -1,98 +1,137 @@
 
 ## Worldwide Awaydays (PPP) Database Design and Analysis
 
+---
+
 ## Overview
-This project is an academic case study completed for ISM122 Data Management at the University of Brighton. It focuses on designing and analysing a database system for Worldwide Awaydays (PPP), covering booking management, guest data, payments, business intelligence, GDPR compliance, and database architecture.
 
-The study demonstrates how relational database design supports operational efficiency, data integrity, and regulatory compliance, while also exploring the role of graph databases for advanced relationship-based insights.
+This report presents a complete data management case study for Worldwide Awaydays (PPP). It focuses on designing a relational database system to manage party events, guests, bookings, payments, suppliers, and activities.
 
----
-
-## Institution Details
-University of Brighton (UoB)  
-Mithras House, Lewes Road, Brighton, East Sussex, BN2 4AT  
-
-**Module:** ISM122 Data Management  
-**Student ID:** 25805798  
-**Instructor:** Jennie Harding  
-**Submission Date:** January 21, 2026  
+The study also explores business intelligence opportunities, GDPR compliance, security architecture, and the comparison between relational and graph database systems.
 
 ---
 
-## Project Objectives
-- Design a logical relational database for PPP/WWA operations  
-- Manage guests, bookings, activities, payments, and suppliers  
-- Define must-have and optional business queries  
-- Support business intelligence and decision-making  
-- Apply GDPR principles to personal data handling  
-- Evaluate relational vs graph database systems  
+## Task 1: Logical Database Design
+
+The PPP system is designed to manage:
+- Party details and event structures  
+- Guest information including passport and health data  
+- Accommodation and activity bookings  
+- Supplier management  
+- Payment tracking and cancellations  
+
+### Business Rules & Queries
+The system supports different query levels:
+
+**Must Queries**
+- Record guest details with health and passport information  
+- Categorise activities  
+- Manage bookings (create, update, cancel)  
+
+**Should Queries**
+- Match guests to activities in a party  
+- Supplier payment summaries  
+- Activity and guest reporting  
+
+**Could Queries**
+- Cost per guest analysis  
+- Average event cost per guest  
+- Outstanding balances per guest or party  
+
+**Optional Enhancements**
+- Automated triggers for payment updates  
+- Safety validation for health risks in activities  
+- Activity capacity control procedures  
 
 ---
 
-## Key Areas Covered
+## Task 2: Business Intelligence (BI)
 
-### 1. Database Design
-- Party, guest, activity, supplier, and booking structures  
-- Payment tracking and activity participation rules  
-- Logical schema supporting operational requirements  
+The PPP database supports BI analysis for decision-making.
 
----
+### Key BI Areas
+- Revenue, cost, and profit analysis per destination  
+- Customer behaviour and spending patterns  
+- Supplier performance and commission tracking  
+- Activity popularity and seasonal trends  
+- Cancellation and risk analysis  
 
-### 2. Business Intelligence (BI)
-- Revenue and cost analysis per trip and destination  
-- Customer behaviour insights (spending, repeat bookings)  
-- Supplier performance and risk monitoring  
-- Operational efficiency metrics and cancellation trends  
-- Star schema design for data warehouse integration  
-
----
-
-### 3. GDPR and Data Protection
-- Handling of sensitive data (passport, health, financial records)  
-- Lawful processing, consent, and purpose limitation  
-- Data minimisation and storage limitation strategies  
-- Security controls and breach response procedures  
-- Cross-border data transfer considerations  
+### Data Warehouse Design
+A **star schema** is used:
+- Fact tables: bookings, payments, expenses  
+- Dimension tables: guests, suppliers, activities, destinations  
 
 ---
 
-### 4. Security Architecture
+## Task 3: GDPR and Data Security
+
+The system processes sensitive personal data including:
+- Names, contact details, passport data  
+- Payment and booking history  
+- Health and allergy information  
+
+### Key Risks
+- Identity theft and fraud  
+- Data breaches and reputational damage  
+- Unauthorized access to sensitive health data  
+
+### GDPR Principles Applied
+- Lawfulness, fairness, and transparency  
+- Purpose limitation  
+- Data minimisation  
+- Accuracy and storage limitation  
+- Integrity and confidentiality  
+
+### Security Controls
 - Role-based access control (RBAC)  
-- Encryption of sensitive data in transit and at rest  
+- Encryption of sensitive data (in transit and at rest)  
 - Audit logging and monitoring  
-- Input validation and SQL injection prevention  
-- Secure third-party data sharing practices  
+- Secure third-party data sharing  
+- GDPR-compliant data retention policies  
 
 ---
 
-### 5. Database Architecture Comparison
-- Relational Database Management System (RDBMS) for core operations  
-- Graph database for recommendation and relationship analysis  
-- Evaluation of strengths and limitations of both models  
-- Hybrid architecture recommendation  
+## Task 4: Relational vs Graph Databases
+
+### Relational Database (RDBMS)
+Used for:
+- Bookings  
+- Payments  
+- Guest records  
+- Supplier management  
+
+**Strengths**
+- Strong ACID compliance  
+- High data integrity  
+- Ideal for financial transactions  
+- Easy integration with BI tools  
 
 ---
 
-## Key Findings
-- RDBMS is best suited for booking, payments, and compliance-heavy operations  
-- Graph databases add value for recommendation systems and relationship analysis  
-- A hybrid system provides scalability and advanced analytics capability  
-- Strong governance and GDPR compliance are critical for sensitive travel data  
+### Graph Database
+Used for:
+- Recommendation systems  
+- Social/referral analysis  
+- Relationship mapping between guests and activities  
+
+**Strengths**
+- Efficient relationship traversal  
+- Better for multi-hop queries  
+- Useful for personalisation and marketing insights  
 
 ---
 
-## Technologies & Concepts Used
-- SQL and relational database design  
-- Data warehousing and star schema modelling  
-- Business intelligence analysis  
-- GDPR compliance framework  
-- Graph database concepts (Neo4j-style modelling)  
-- Transaction management and ACID properties  
+### Final Recommendation
+A **hybrid approach** is recommended:
+- RDBMS as the core system of record  
+- Graph database for advanced analytics and recommendations  
 
 ---
 
 ## Conclusion
-This case study demonstrates how a well-designed relational database system ensures data integrity, operational efficiency, and regulatory compliance for a complex travel and event management platform. It also highlights how modern organisations can extend capabilities using graph databases for advanced analytics and personalisation.
+
+This case study demonstrates how structured relational database design ensures operational efficiency, data integrity, and GDPR compliance for Worldwide Awaydays. It also highlights how graph databases can extend the system for advanced customer insights and relationship analysis.
 
 ---
 
+ 
